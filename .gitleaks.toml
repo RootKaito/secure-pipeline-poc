@@ -1,0 +1,11 @@
+title = "gitleaks config — secure-pipeline-poc"
+
+[extend]
+useDefault = true
+
+# Allowlist documentada: casos justificados de "secrets" que são falsos positivos
+# ou fixtures de teste conhecidas, nunca segredos reais.
+# Preenchido na prática assim que o primeiro falso positivo aparecer (Fase 2 do projeto).
+[allowlist]
+description = "Fixtures e casos justificados"
+paths = []
