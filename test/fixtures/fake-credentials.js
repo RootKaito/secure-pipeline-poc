@@ -1,0 +1,3 @@
+const FAKE_AWS_ACCESS_KEY = "AKIAFAKETESTKEY12345";
+
+module.exports = { FAKE_AWS_ACCESS_KEY };

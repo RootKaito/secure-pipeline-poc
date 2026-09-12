@@ -5,7 +5,14 @@ useDefault = true
 
 # Allowlist documentada: casos justificados de "secrets" que são falsos positivos
 # ou fixtures de teste conhecidas, nunca segredos reais.
-# Preenchido na prática assim que o primeiro falso positivo aparecer (Fase 2 do projeto).
+#
+# test/fixtures/fake-credentials.js contém uma AWS Access Key falsa, usada para
+# testar a lógica de rejeição de credenciais inválidas no middleware de
+# autenticação. Ela bate com o padrão regex do Gitleaks de propósito, mas não é
+# um segredo real — por isso está explicitamente allowlistada aqui, em vez de
+# ser ignorada silenciosamente.
 [allowlist]
 description = "Fixtures e casos justificados"
-paths = []
+paths = [
+  '''test/fixtures/.*''',
+]
