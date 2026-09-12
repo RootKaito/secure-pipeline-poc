@@ -1,8 +1,11 @@
 name: Pre-deploy DAST
 
+# Disparo manual, não a cada push: um scan DAST contra o mesmo alvo fixo não muda
+# de resultado a cada commit (o Juice Shop tem os mesmos achados sempre), então
+# rodar automaticamente em toda push deixaria o repositório permanentemente "vermelho"
+# no Actions. Na prática, um DAST roda sob demanda ou antes de um deploy real — aqui
+# ele demonstra o gate 3 quando você quiser gerar a evidência, não como CI contínuo.
 on:
-  push:
-    branches: [master]
   workflow_dispatch:
 
 jobs:
